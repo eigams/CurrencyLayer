@@ -20,6 +20,8 @@
 		0CDB40FD1EDB05E400DD4CEE /* CLMainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB40FC1EDB05E400DD4CEE /* CLMainViewModelTests.swift */; };
 		0CDB40FE1EDB05E900DD4CEE /* CLMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB40F81EDB047500DD4CEE /* CLMainViewModel.swift */; };
 		0CDB41001EDB05F000DD4CEE /* CLBasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB40F61EDB047500DD4CEE /* CLBasketItem.swift */; };
+		0CDB41031EDB076900DD4CEE /* CLBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB41011EDB076900DD4CEE /* CLBasketViewController.swift */; };
+		0CDB41041EDB076900DD4CEE /* CLCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB41021EDB076900DD4CEE /* CLCurrenciesViewController.swift */; };
 		20CD756C913EAE6A8B116196 /* Pods_CurrencyLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399FE730CCBFF22065CF8558 /* Pods_CurrencyLayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		0CDB40F71EDB047500DD4CEE /* CLCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLCurrency.swift; sourceTree = "<group>"; };
 		0CDB40F81EDB047500DD4CEE /* CLMainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLMainViewModel.swift; sourceTree = "<group>"; };
 		0CDB40FC1EDB05E400DD4CEE /* CLMainViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLMainViewModelTests.swift; sourceTree = "<group>"; };
+		0CDB41011EDB076900DD4CEE /* CLBasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLBasketViewController.swift; sourceTree = "<group>"; };
+		0CDB41021EDB076900DD4CEE /* CLCurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLCurrenciesViewController.swift; sourceTree = "<group>"; };
 		262E44FA23731F14E0134B02 /* Pods-CurrencyLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyLayer/Pods-CurrencyLayer.debug.xcconfig"; sourceTree = "<group>"; };
 		399FE730CCBFF22065CF8558 /* Pods_CurrencyLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A30CAE82FDE4AF79541DF09 /* Pods-CurrencyLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyLayer/Pods-CurrencyLayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		0CDB40D31EDB00D400DD4CEE /* CurrencyLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0CDB41011EDB076900DD4CEE /* CLBasketViewController.swift */,
+				0CDB41021EDB076900DD4CEE /* CLCurrenciesViewController.swift */,
 				0CDB40F61EDB047500DD4CEE /* CLBasketItem.swift */,
 				0CDB40F71EDB047500DD4CEE /* CLCurrency.swift */,
 				0CDB40F81EDB047500DD4CEE /* CLMainViewModel.swift */,
@@ -293,10 +299,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CDB40D71EDB00D400DD4CEE /* CLMainViewController.swift in Sources */,
+				0CDB41041EDB076900DD4CEE /* CLCurrenciesViewController.swift in Sources */,
 				0CDB40FA1EDB047500DD4CEE /* CLCurrency.swift in Sources */,
 				0CDB40D51EDB00D400DD4CEE /* AppDelegate.swift in Sources */,
 				0CDB40F91EDB047500DD4CEE /* CLBasketItem.swift in Sources */,
 				0CDB40FB1EDB047500DD4CEE /* CLMainViewModel.swift in Sources */,
+				0CDB41031EDB076900DD4CEE /* CLBasketViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

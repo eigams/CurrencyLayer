@@ -36,6 +36,13 @@ class CLMainViewController: UIViewController {
     
     func addItemsToBasketPressed(sender: UIBarButtonItem) {
         clickedButton = sender
+        let basketViewController = CLBasketViewController(style: .plain)
+        basketViewController.delegate = self
+        basketViewController.modalPresentationStyle = .popover
+        basketViewController.preferredContentSize = CGSize(width: 200, height: 175)
+        basketViewController.popoverPresentationController?.delegate = self
+        
+        present(basketViewController, animated: true, completion: nil)
     }
     
     @IBAction func checkoutButtonPressed(_ sender: Any) {
@@ -45,6 +52,13 @@ class CLMainViewController: UIViewController {
     
     @IBAction func changeCurrencyButtonPressed(_ sender: UIButton) {
         clickedButton = sender
+        let currenciesViewController = CLCurrenciesViewController(style: .plain)
+        currenciesViewController.delegate = self
+        currenciesViewController.modalPresentationStyle = .popover
+        currenciesViewController.preferredContentSize = CGSize(width: 70, height: 175)
+        currenciesViewController.popoverPresentationController?.delegate = self
+        
+        present(currenciesViewController, animated: true, completion: nil)
     }
 }
 
@@ -69,3 +83,19 @@ extension CLMainViewController: UIPopoverPresentationControllerDelegate {
     }
 }
 
+extension CLMainViewController: CLBasketViewControllerDelegate {
+    func didSelectItem(_ viewController: CLBasketViewController, item: CLBasketItem) {
+        viewModel.addBasketItem(item)
+        presentedViewController?.dismiss(animated: true, completion: nil)
+        tableView.reloadData()
+    }
+}
+
+extension CLMainViewController: CLCurrenciesViewControllerDelegate {
+    func didSelectCurrency(_ controller: CLCurrenciesViewController, currencyRate: [String: Double]) {
+        viewModel.changeRate(to: currencyRate.first?.value ?? 1)
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
+        currencyLabel.text = currencyRate.first?.key
+        priceLabel.text = String(format:"%.2f",viewModel.displayPrice)
+    }
+}
