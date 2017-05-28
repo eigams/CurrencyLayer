@@ -14,6 +14,7 @@ class CLMainViewController: UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var changeCurrencyButton: UIButton!
     
+    fileprivate let viewModel = CLMainViewModel()
     fileprivate var clickedButton: Any?
     
     override func viewDidLoad() {
@@ -21,8 +22,10 @@ class CLMainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         changeCurrencyButton.setImage(UIImage(named: "dollar-symbol.png"), for: .normal)
+        currencyLabel.text = CLCurrency.USD.rawValue
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(CLMainViewController.addItemsToBasketPressed(sender:)))
+        tableView.dataSource = viewModel
         tableView.delegate = self
     }
     
@@ -36,6 +39,8 @@ class CLMainViewController: UIViewController {
     }
     
     @IBAction func checkoutButtonPressed(_ sender: Any) {
+        viewModel.updateDisplayPrice()
+        priceLabel.text = String(format:"%.2f",viewModel.displayPrice)        
     }
     
     @IBAction func changeCurrencyButtonPressed(_ sender: UIButton) {
